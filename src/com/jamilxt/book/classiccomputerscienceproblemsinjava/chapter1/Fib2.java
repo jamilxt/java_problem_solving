@@ -5,6 +5,7 @@ package com.jamilxt.book.classiccomputerscienceproblemsinjava.chapter1;
  * @created 03 Nov, 2021
  */
 public class Fib2 {
+    // Without Memoization Technique
 
     static int totalCalls = 0;
 
@@ -15,7 +16,7 @@ public class Fib2 {
     }
 
     public static void main(String[] args) {
-        System.out.println(fib2(40));
-        System.out.println(totalCalls);
+        System.out.println(fib2(40)); // 102334155
+        System.out.println(totalCalls); // 331160281
     }
 }

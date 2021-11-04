@@ -9,9 +9,11 @@ import java.util.Map;
  */
 public class Fib3 {
 
-    // Memoization is technique in which you store the results of
+    // Memoization Technique
+    
+    // Memoization is a technique in which you store the results of
     // computational tasks when they are completed so that
-    // when you need them again, you can look up instead of needing
+    // when you need them again, you can look them up instead of needing
     // to compute them a second (or millionth) time.
 
     // Map.of() was introduced in Java 9 but returns
@@ -31,7 +33,7 @@ public class Fib3 {
     }
 
     public static void main(String[] args) {
-        System.out.println(fib3(40));
-        System.out.println(totalCalls);
+        System.out.println(fib3(40)); // 102334155
+        System.out.println(totalCalls); // 79
     }
 }
