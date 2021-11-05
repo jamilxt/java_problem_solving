@@ -1,4 +1,4 @@
-package com.jamilxt.book.classiccomputerscienceproblemsinjava.chapter1;
+package com.jamilxt.book.classiccomputerscienceproblemsinjava.chapter1.fib;
 
 import java.util.stream.IntStream;
 
