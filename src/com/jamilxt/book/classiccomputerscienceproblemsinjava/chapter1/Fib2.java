@@ -4,8 +4,8 @@ package com.jamilxt.book.classiccomputerscienceproblemsinjava.chapter1;
  * @author jamilxt
  * @created 03 Nov, 2021
  */
+// 1.1.2 Utilizing base cases
 public class Fib2 {
-    // Without Memoization Technique
 
     static int totalCalls = 0;
 
