@@ -1,6 +1,7 @@
 package com.jamilxt.book.classiccomputerscienceproblemsinjava.chapter2;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 
 /**
@@ -58,7 +59,32 @@ public class Gene {
         return false;
     }
 
-    // TODO: Binary Search
+    /*
+    # Binary search only works on sorted collections
+
+    Once again, like with linear search,
+    you would never need to implement binary search yourself because there’s an implementation in the Java standard library.
+    Collections.binarySearch() can search any sorted Collection (like a sorted ArrayList).
+     */
+    public boolean binaryContains(Codon key) {
+        ArrayList<Codon> sortedCodons = new ArrayList<>(codons);
+        Collections.sort(sortedCodons);
+        int low = 0;
+        int high = sortedCodons.size() - 1;
+        while (low <= high) {               // while there is still a search space
+            int middle = (low + high) / 2;
+            int comparison = sortedCodons.get(middle).compareTo(key);
+
+            if (comparison < 0) {           // middle codon is less than key
+                low = middle + 1;
+            } else if (comparison > 0) {    // middle codon is greater than key
+                high = middle - 1;
+            } else {                        // middle codon is equal to key
+                return true;
+            }
+        }
+        return false;
+    }
 
     public static void main(String[] args) {
         String geneStr = "ACGTGGCTCTCTAACGTACGTACGTACGGGGTTTATATATACCCTAGGACTCCCTTT";
@@ -69,8 +95,13 @@ public class Gene {
         // Linear Search
         System.out.println(myGene.linearContains(acg)); // true
         System.out.println(myGene.linearContains(gat)); // false
+//        System.out.println(myGene.codons.contains(acg));
+//        System.out.println(myGene.codons.contains(gat));
 
-        // TODO: Binary Search
-
+        // Binary Search
+        System.out.println(myGene.binaryContains(acg)); // true
+        System.out.println(myGene.binaryContains(gat)); // false
+//        System.out.println(Collections.binarySearch(myGene.codons, acg));
+//        System.out.println(Collections.binarySearch(myGene.codons, gat));
     }
 }
