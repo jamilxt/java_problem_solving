@@ -1,6 +1,8 @@
 package com.jamilxt.book.classiccomputerscienceproblemsinjava.chapter2;
 
 import java.util.List;
+import java.util.function.Function;
+import java.util.function.Predicate;
 
 /**
  * @author jamilxt
@@ -33,6 +35,22 @@ public class GenericSearch {
         }
         return false;
     }
+
+//    public static class Node<T> implements Comparable<Node<T>> {
+//        final T state;
+//        Node<T> parent;
+//        double cost;
+//        double heuristic;
+//
+//        // for dsf and bfs we won't use cost and heuristic
+//        public Node(T state, Node<T> parent) {
+//            this.state = state;
+//            this.parent = parent;
+//        }
+//
+//        // for A* (a star) we will use cost and heuristic
+//
+//    }
 
     public static void main(String[] args) {
         System.out.println(linearContains(List.of(1, 5, 15, 15, 15, 15, 20), 5));                   // true
