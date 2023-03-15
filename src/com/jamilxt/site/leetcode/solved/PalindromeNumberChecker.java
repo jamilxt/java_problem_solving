@@ -12,7 +12,7 @@ public class PalindromeNumberChecker {
     }
 
     public static boolean isPalindrome(int number) {
-        int reversedNumber = PalindromeNumberChecker.reverseNumber(number);
+        int reversedNumber = PalindromeNumberChecker.reverseNumber2(number);
         return number == reversedNumber;
     }
 
@@ -25,6 +25,18 @@ public class PalindromeNumberChecker {
             remaining = number % 10;
             number = (number - remaining) / 10;
             reversedNumber += remaining;
+        }
+        return reversedNumber;
+    }
+
+    public static int reverseNumber2(int number) { // Mathematical Approach
+        int reversedNumber = 0;
+        int remainder = 0;
+
+        while (number != 0) {
+            remainder = number % 10;
+            reversedNumber = reversedNumber * 10 + remainder;
+            number /= 10;
         }
         return reversedNumber;
     }
